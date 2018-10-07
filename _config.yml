@@ -1,95 +1,117 @@
-# Jekyll configuration
+# SITE CONFIGURATION
+baseurl: "/Type-on-Strap"
+url: "https://sylhare.github.io"
+title: Type on Strap # site's title
+description: "A website with blog posts and pages" # used by search engines
+
+
+# THEME-SPECIFIC CONFIGURATION
+theme_settings:
+  # Meta
+  title: Type on Strap # blog's title
+  avatar: assets/img/triangle.svg
+  favicon: assets/favicon.ico
+  gravatar: # Email MD5 hash
+
+  # Header and footer text
+  header_text: > #two or three lines to describe your site
+     <p>Change header text in <code>_config.yml</code> <br> to update this feature.</p>
+  header_text_feature_image: assets/img/pexels/triangular.jpeg
+  footer_text: >
+   Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
+
+  # Icons
+  rss: true  # Make sure you created a feed.xml with feed.xml layout
+  email_address: # Full email address, e.g. "sam@example.com"
+  behance:
+  bitbucket:
+  dribbble:
+  facebook:
+  flickr:
+  gitlab:
+  github: "sylhare"
+  google_plus:
+  instagram:
+  keybase:
+  linkedin:  # Full URL
+  pinterest:
+  reddit:
+  soundcloud:
+  stack_exchange:  # Full URL
+  steam:
+  tumblr:
+  twitter: # "twitter username"
+  vimeo:
+  wordpress:
+  youtube:
+  
+  # Sharing options
+  share_buttons:
+    facebook: true
+    twitter: true
+    google_plus: true
+    tumblr:
+    pinterest:
+    pocket:
+    reddit: true
+    linkedin:
+    wordpress:
+    email: true
+
+  # Scripts / Features 
+  google_analytics: # Tracking ID, e.g. "UA-000000-01"
+  disqus_shortname:
+  katex: true # Enable if using math markup
+  
+  special_page:
+    search: 
+      icon: "search"
+      enabled: true
+    tags:
+      icon: "tags"
+      enabled: true
+  
+  # Localization strings
+  str_follow_on: "Follow on"
+  str_rss_follow: "Follow RSS feed"
+  str_share_on: "Share on"
+  str_add_to: "Add to"
+  str_email: "Email"
+  str_tweet: "Tweet"
+  str_pin_it: "Pin it"
+  str_next_post: "Next post"
+  str_previous_post: "Previous post"
+  str_next_page: "Next"
+  str_previous_page: "Prev"
+  str_continue_reading: "Continue reading"
+  str_javascript_required_disqus: "Please enable JavaScript to view comments."
+
+  # Colours, typography and padding
+  # Open the "_sass > base" folder, and open "_variables.scss"
+  google_fonts: "Source+Sans+Pro:400,700,700italic,400italic"
+
+  # Post navigation
+  post_navigation: true
+  
+  
+# PAGINATION
+paginate: 5
+paginate_path: "blog/page:num"
+
+
+# PORTFOLIO
+collections:
+  portfolio:
+    output: true
+    permalink: /:collection/:name
+
+
+# BUILD SETTINGS
 markdown: kramdown
 highlighter: rouge
-paginate: 100 # it will paginate after this number
-language: 'en-uk'
-
-# edit baseurl to simply '/' if using as your personal page (instead of a project page)
-baseurl: /jasper2/
-
-# Website info
-title: Ghost
-description: The professional publishing platform
-cover: assets/images/blog-cover.jpg
-logo: assets/images/blog-icon.png
-logo_dark: assets/images/favicon.png
-favicon: assets/images/favicon.png
-production_url: https://jekyller.github.io/jasper2/
-source_url: https://github.com/jekyller/jasper2/
-CNAME: #add cname for website to be created
-
-# Social info
-navigation: True # show the navbar links
-subscribers: True # you need to connect an external service for this to work,
-# if 'True' the submit button is disabled for now, but you can change that
-# by editing `_includes/subscribe-form.html`
-twitter: tryghost # replace by your username
-facebook: ghost # replace by your username
-
-# Disqus
-disqus: False
-disqus_shortname: jekyller # replace with your disqus username
-
-# Google Analytics
-google_analytics: UA-69281367-1 # replace with your GA tracking identifier
-
-# Permalinks
-permalink: /:title
-# permalink: /author/:author
-# permalink: /tag/:tag
-
-# Authors' info in `_data/authors.yml`
-# Tags' info in `_data/tags_info.yml`
-
-# gems and other configs
-plugins_dir: [_plugins]
-plugins: [jekyll-paginate, jekyll-feed]
-
-feed:
-  path: feed.xml
-
-# Additional settings available on the front-matter
-# Site logo in the index.html (as in demo.ghost.io)
-# Author's page cover in _layouts/author.html
-# The same for page.html and tag.html layouts
-# Post's page cover as a per-post basis _posts/...
-# Disqus comments as a per-post basis
-# ...
-
-# Settings for builing master branch with travis-ci
-# with jekyll-travis
-
-# Settings for deploy rake task
-# Username and repo of Github repo, e.g.
-# https://github.com/USERNAME/REPO.git
-# username defaults to ENV['GIT_NAME'] used by Travis
-# repo defaults to USERNAME.github.io
-# Branch defaults to "source" for USERNAME.github.io
-# or "master" otherwise
-safe: False
-lsi: False
-username: jekyller
-repo: jasper2
-branch: master
-relative_source: ../jasper2/
-destination: ../jasper2-pages/
-production_url:  https://jekyller.github.io/jasper2/
-source_url:  https://github.com/jekyller/jasper2/
-
-exclude:
-  - assets/css
-  - node_modules
-  - vendor
-  - .travis.yml
-  - Gemfile
-  - Gemfile.lock
-  - GHOST.txt
-  - gulpfile.js
-  - LICENSE
-  - package.json
-  - Rakefile
-  - README.md
-  - script.py
-  - changelog.md
-  - "*.Rmd"
-  - .git*
+sass:
+  sass_dir: _sass
+  style: :compressed
+plugins: [jekyll-paginate, jekyll-seo-tag]
+#theme: type-on-strap # Uncomment if using the theme as a jekyll theme gem
+exclude: ["Gemfile", "Gemfile.lock", "type-on-strap.gemspec", "*.gem", "LICENSE", "README.md", "screenshot.png", "package.json", "node_modules", "gulpfile.js", ".idea/*"]
